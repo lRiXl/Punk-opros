@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Навигатор Кружков | Темирлан, Амирхан, Никита и Александр</title>
+    <link rel="stylesheet" href="Style.css">
+    <link rel="icon" href="https://esil.edu.kz/wp-content/uploads/2023/03/esil.png" sizes="32x32">
+    <link rel="icon" href="https://esil.edu.kz/wp-content/uploads/2023/03/esil.png" sizes="192x192">
+</head>
+<body>
+    
+    <header class="site-header">
+        <div class="header-container">
+            <a href="https://esil.edu.kz/" target="_blank" class="logo-link">
+                <img src="https://esil.edu.kz/wp-content/uploads/2023/03/esil.png" alt="ESIL University Logo" class="header-logo">
+            </a>
+            
+            <nav class="nav-menu">
+                <button class="nav-btn active" onclick="switchTab('home-tab', this)">🧭 Навигатор кружков</button>
+                <button class="nav-btn" onclick="switchTab('quiz-tab', this)">📚 Кружки</button>
+                <button class="nav-btn" onclick="switchTab('disciplines-tab', this)">🎓 Дисциплины</button>
+            </nav>
+            
+            <div style="width: 50px;" class="header-spacer"></div>
+        </div>
+    </header>
+    
+    <section id="home-tab" class="page-section active">
+        <div class="container">
+            <h1 style="text-align:center;">Навигатор Кружков</h1>
+            <p style="text-align:center; margin-bottom:30px;">
+                Ознакомься с направлениями и узнай, что подходит именно тебе.
+            </p>
+            
+            <div class="home-grid">
+                <div class="clubs-container">
+                    <div class="club-card">
+                        <img src="images/tech.jpg" alt="Технологии">
+                        <h3>💻 Технологии</h3>
+                        <p>Изучай программирование, робототехнику и новые технологии.</p>
+                    </div>
+                    <div class="club-card">
+                        <img src="images/creative.jpg" alt="Творчество">
+                        <h3>🎨 Творчество</h3>
+                        <p>Создавай художественные проекты, рисуй и экспериментируй с дизайном.</p>
+                    </div>
+                    <div class="club-card">
+                        <img src="images/media.jpg" alt="Медиа">
+                        <h3>🎥 Медиа</h3>
+                        <p>Учись снимать видео, монтировать и создавать контент для соцсетей.</p>
+                    </div>
+                    <div class="club-card">
+                        <img src="images/social.jpg" alt="Коммуникации">
+                        <h3>👥 Коммуникации</h3>
+                        <p>Развивай навыки общения, лидерства и работы в команде.</p>
+                    </div>
+                    <div class="club-card">
+                        <img src="images/science.jpg" alt="Наука">
+                        <h3>🔬 Наука</h3>
+                        <p>Проводь эксперименты, изучай открытия и анализируй данные.</p>
+                    </div>
+                    <div class="club-card">
+                        <img src="images/active.jpg" alt="Активность">
+                        <h3>🏃 Активность</h3>
+                        <p>Занимайся спортом, участвуй в соревнованиях и активных играх.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="about.html" target="_blank" class="btn-next" style="display: block; width: fit-content; margin: 30px auto; text-decoration: none; text-align: center;">
+                Подробнее о кружках
+            </a>
+        </div>
+    </section>
+    
+    <section id="quiz-tab" class="page-section">
+        <div class="container" id="mainContainer">
+            
+            <div id="start-screen" class="registration-card" style="max-width: 500px; margin: 0 auto; text-align: center;">
+                <div class="circle-icon" style="margin-bottom: 20px;">🧭</div>
+                <h1>Навигатор Кружков</h1>
+                <p style="color: #666; margin-bottom: 25px;">Введите ваши данные, чтобы начать поиск подходящего кружка</p>
+                
+                <div class="input-group" style="margin-bottom: 15px;">
+                    <input type="text" id="name" placeholder="Ваше имя" class="custom-input">
+                </div>
+                <div class="input-group" style="margin-bottom: 20px;">
+                    <input type="email" id="email" placeholder="Ваш Email" class="custom-input">
+                </div>
+                
+                <button class="btn-next" style="width: 100%;" onclick="registerAndStart()">
+                    Начать навигацию ✨
+                </button>
+            </div>
+            
+            <div id="quiz-screen" style="display: none;">
+                <div style="display: flex; justify-content: space-between; font-size: 14px; font-weight: 600;">
+                    <span id="qCounter"></span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="question-title" id="questionTitle"></div>
+                <div id="answers" class="options-list"></div>
+                <div class="controls">
+                    <button class="btn-prev" id="prevBtn" onclick="prevQuestion()">Назад</button>
+                    <button class="btn-next" onclick="nextQuestion()">Далее</button>
+                </div>
+            </div>
+            
+            <div id="result-screen" style="display: none;">
+                <h2 style="text-align: center;">🎯 Твой профиль интересов</h2>
+                <div id="statsContainer"></div>
+                <h3 style="margin-top: 25px;">Рекомендуемые кружки:</h3>
+                <div id="clubsContainer" class="clubs-container"></div>
+                <button class="btn-next" style="width: 100%; margin-top: 25px;" onclick="resetQuiz()">Пройти заново</button>
+            </div>
+            
+        </div>
+    </section>
+    
+    <section id="disciplines-tab" class="page-section">
+        <div class="container">
+            <div id="discipline-main">
+                <h1 style="text-align: center;">Все дисциплины</h1>
+                <div class="discipline-grid">
+                    <div class="discipline-card" onclick="startFacultyQuiz('business')">
+                        <div class="circle-icon">💼</div>
+                        <strong>Факультет Бизнеса и управления</strong>
+                    </div>
+                    <div class="discipline-card" onclick="startFacultyQuiz('applied')">
+                        <div class="circle-icon">💻</div>
+                        <strong>Факультет прикладных наук</strong>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="faculty-quiz-screen" style="display: none;">
+                <h2 id="faculty-name-display" style="text-align: center;">Опрос</h2>
+                <div class="progress-bar-container">
+                    <div class="progress-fill" id="f-progressFill"></div>
+                </div>
+                <div class="question-title" id="f-questionTitle"></div>
+                <div id="f-answers" class="options-list"></div>
+                <div class="controls">
+                    <button class="btn-prev" onclick="fPrevQuestion()">Назад</button>
+                    <button class="btn-next" onclick="fNextQuestion()">Далее</button>
+                </div>
+            </div>
+            
+            <div id="f-result-screen" style="display: none; text-align: center;">
+                <h2>Твоя рекомендуемая программа:</h2>
+                <div id="f-result-content"></div> 
+                
+                <button class="btn-next" style="width: 100%; margin-top: 25px;" onclick="closeFacultyQuiz()">
+                    К списку факультетов
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <script src="Script.js"></script>
+</body>
+</html>

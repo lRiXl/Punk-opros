@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О кружках | Подробная информация</title>
+  <link rel="stylesheet" href="Style.css">
+  <link rel="icon" href="https://esil.edu.kz/wp-content/uploads/2023/03/esil.png" sizes="32x32">
+  <link rel="icon" href="https://esil.edu.kz/wp-content/uploads/2023/03/esil.png" sizes="192x192">
+  <style>
+    
+    .details-list {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin-top: 50px;
+      margin-bottom: 100px;
+    }
+    
+    .detail-item {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+    
+    .detail-item:hover {
+      transform: scale(1.02);
+    }
+    
+    .detail-image {
+      width: 40%;
+      height: 350px;
+      object-fit: cover;
+    }
+    
+    .detail-content {
+      padding: 40px;
+      width: 60%;
+    }
+    
+    .detail-content h2 {
+      color: var(--primary-dark);
+      margin-bottom: 15px;
+      font-size: 28px;
+    }
+    
+    .detail-content p {
+      line-height: 1.6;
+      color: #444;
+      font-size: 18px;
+    }
+    
+    @media (max-width: 768px) {
+      .detail-item {
+        flex-direction: column;
+      }
+      .detail-image, .detail-content {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    a {
+    text-decoration: none;
+}
+  </style>
+</head>
+<body>
+  
+  <header class="site-header">
+    <div class="header-container">
+      <a href="https://esil.edu.kz/" target="_blank" class="logo-link">
+        <img src="https://esil.edu.kz/wp-content/uploads/2023/03/esil.png" alt="ESIL University Logo" class="header-logo">
+      </a>
+      
+      <nav class="nav-menu">
+        <a href="index.html#home-tab" class="nav-btn">🏠 Главная</a>
+        <a href="index.html#quiz-tab" class="nav-btn">📚 Кружки</a>
+        <a href="index.html#disciplines-tab" class="nav-btn">🎓 Дисциплины</a>
+      </nav>
+      
+      <div style="width: 50px;" class="header-spacer"></div>
+    </div>
+  </header>
+  
+  <section class="page-section active">
+    <div class="container">
+      <h1 style="text-align:center; color: #004D38; margin-top: 40px;">Наши направления</h1>
+      
+      <div class="details-list">
+        
+        <article class="detail-item">
+          <img src="images/tech.jpg" alt="Технологии" class="detail-image">
+          <div class="detail-content">
+            <h2>💻 Технологии и программирование</h2>
+            <p>В этом кружке мы не просто учим код, мы создаем будущее. Участники изучают основы разработки на JavaScript, Python и других популярных языках. Мы детально разбираем, как устроены современные веб-приложения и мобильные игры. Вы научитесь верстать сайты, работать с базами данных и даже создавать простые нейросети. Это идеальное место для тех, кто хочет превратить свое хобби в востребованную профессию.</p>
+          </div>
+        </article>
+        
+        <article class="detail-item">
+          <img src="images/creative.jpg" alt="Творчество" class="detail-image">
+          <div class="detail-content">
+            <h2>🎨 Креатив и дизайн</h2>
+            <p>Здесь ваша фантазия не имеет границ. Мы обучаем принципам графического дизайна, работе в современных графических редакторах и основам классического рисунка. Участники проекта развивают чувство композиции и стиля. Вы узнаете, как создавать логотипы, иллюстрации и макеты интерфейсов. Этот кружок поможет вам развить творческое мышление, которое пригодится в любой сфере жизни.</p>
+          </div>
+        </article>
+        
+        <article class="detail-item">
+          <img src="images/media.jpg" alt="Медиа" class="detail-image">
+          <div class="detail-content">
+            <h2>🎥 Медиа и видеопроизводство</h2>
+            <p>Мир видеоконтента огромен, и мы научим вас быть в нем профессионалом. Мы проходим все этапы: от написания захватывающего сценария до финального монтажа и цветокоррекции. Вы научитесь работать с освещением, профессиональным звуком и поймете, как удерживать внимание аудитории. Ваши видео станут качественнее, а подход к созданию контента — осознаннее.</p>
+          </div>
+        </article>
+        
+        <article class="detail-item">
+          <img src="images/social.jpg" alt="Коммуникации" class="detail-image">
+          <div class="detail-content">
+            <h2>👥 Социальные коммуникации</h2>
+            <p>Навыки общения — это ключ к успеху. В этом кружке мы проводим дебаты, учимся выступать перед большой аудиторией и тренируем лидерские качества. Мы разбираем психологию переговоров и учимся работать в команде даже в стрессовых ситуациях. Если вы хотите стать увереннее в себе и уметь убеждать людей — наше направление ждет вас.</p>
+          </div>
+        </article>
+        
+        <article class="detail-item">
+          <img src="images/science2.jpg" alt="Наука" class="detail-image">
+          <div class="detail-content">
+            <h2>🔬 Научные исследования</h2>
+            <p>Для тех, кто постоянно задает вопрос «почему?». На занятиях мы проводим лабораторные опыты, анализируем физические и химические процессы и учимся работать с научной документацией. Мы не просто учим формулы, мы видим их применение в реальности. Этот кружок закладывает базу для серьезной аналитики и помогает развить критическое мышление.</p>
+          </div>
+        </article>
+        
+        <article class="detail-item">
+          <img src="images/active2.jpg" alt="Активность" class="detail-image">
+          <div class="detail-content">
+            <h2>🏃 Спорт и физическая активность</h2>
+            <p>Здоровое тело — залог продуктивности. Мы организуем тренировки, которые развивают выносливость, координацию и силу. Помимо физических упражнений, мы изучаем основы спортивной тактики в командных играх и важность дисциплины. Присоединяйтесь, чтобы всегда быть в тонусе и заряжаться энергией вместе с единомышленниками.</p>
+          </div>
+        </article>
+        
+      </div>
+      
+      <div style="text-align: center; padding-bottom: 50px;">
+        <a href="index.html" class="btn-next" style="text-decoration: none; padding: 15px 40px;">
+          Вернуться к навигатору
+        </a>
+      </div>
+    </div>
+  </section>
+  
+</body>
+</html>
